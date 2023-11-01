@@ -1,0 +1,8 @@
+﻿@model User
+
+<h1>Докладна інформація про користувача</h1>
+<p><strong>Ім'я:</strong> @Model.FirstName</p>
+<p><strong>Прізвище:</strong> @Model.LastName</p>
+<p><strong>Електронна пошта:</strong> @Model.Email</p>
+<p><strong>Дата реєстрації:</strong> @Model.RegistrationDate.ToShortDateString()</p>
+<!-- Додайте інші атрибути користувача за необхідністю -->

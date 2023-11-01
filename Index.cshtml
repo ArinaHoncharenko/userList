@@ -1,0 +1,11 @@
+﻿@model List<User>
+
+<h1>Список користувачів</h1>
+<ul>
+    @foreach (var user in Model)
+    {
+            <li>
+                <a asp-action="UserDetails" asp-route-id="@user.Id">@user.FirstName @user.LastName</a>
+            </li>
+    }
+</ul>
