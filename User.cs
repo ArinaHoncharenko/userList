@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace oop6_userList.Models
 {
