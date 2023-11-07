@@ -13,9 +13,11 @@ namespace oop6_userList.Controllers
         {
             userList = new List<User>
             {
-                new User { Id = 1, FirstName = "Іван", LastName = "Косенко", Email = "ivan@example.com", RegistrationDate = DateTime.Now },
-                new User { Id = 2, FirstName = "Марія", LastName = "Триліс", Email = "maria@example.com", RegistrationDate = DateTime.Now },
-                new User { Id = 3, FirstName = "Ольга", LastName = "Коваль", Email = "petro@example.com", RegistrationDate = DateTime.Now },
+               new User { Id = 0001, FirstName = "Ольга", LastName = "Богомолова", Email = "olha@example.com", RegistrationDate = new DateTime(2020, 5, 12) },
+               new User { Id = 0002, FirstName = "Олександр", LastName = "Синенко", Email = "oleksandr@example.com", RegistrationDate = new DateTime(2021, 8, 10) },
+               new User { Id = 0003, FirstName = "Петро", LastName = "Польовий", Email = "petro@example.com", RegistrationDate = new DateTime(2022, 12, 23) },
+               new User { Id = 0004, FirstName = "Олег", LastName = "Косенко", Email = "oleh@example.com", RegistrationDate = new DateTime(2021, 04, 08) },
+               new User { Id = 0005, FirstName = "Станіслав", LastName = "Триліс", Email = "stanislav@example.com", RegistrationDate = new DateTime(2022, 01, 29) },
             };
         }
 
