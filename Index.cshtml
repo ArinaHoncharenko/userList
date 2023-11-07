@@ -1,22 +1,25 @@
 @model List<User>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Список користувачів</title>
-</head>
-<body>
-    <h1>Список користувачів</h1>
-    <ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Пошта</th>
+            <th>Дата реєстрації</th>
+        </tr>
+    </thead>
+    <tbody>
         @foreach (var user in Model)
         {
-            <li>
-                <strong>Ім'я:</strong> @user.FirstName<br />
-                <strong>Прізвище:</strong> @user.LastName<br />
-                <strong>Електронна пошта:</strong> @user.Email<br />
-                <strong>Дата реєстрації:</strong> @user.RegistrationDate.ToShortDateString()<br /><br />
-            </li>
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@user.RegistrationDate.ToString("dd.MM.yyyy")</td>
+            </tr>
         }
-    </ul>
-</body>
-</html>
+    </tbody>
+</table>
