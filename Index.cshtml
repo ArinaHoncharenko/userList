@@ -1,5 +1,7 @@
 @model List<User>
 
+<h2>Список користувачів</h2>
+
 <table class="table">
     <thead>
         <tr>
@@ -8,6 +10,7 @@
             <th>Прізвище</th>
             <th>Пошта</th>
             <th>Дата реєстрації</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +22,7 @@
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
                 <td>@user.RegistrationDate.ToString("dd.MM.yyyy")</td>
+                <td><a asp-controller="User" asp-action="UserDetails" asp-route-id="@user.Id">Докладніше</a></td>
             </tr>
         }
     </tbody>
