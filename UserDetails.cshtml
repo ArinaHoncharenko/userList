@@ -1,7 +1,31 @@
 @model User
 
-<h1>Докладна інформація про користувача</h1>
-<p><strong>Ім'я:</strong> @Model.FirstName</p>
-<p><strong>Прізвище:</strong> @Model.LastName</p>
-<p><strong>Електронна пошта:</strong> @Model.Email</p>
-<p><strong>Дата реєстрації:</strong> @Model.RegistrationDate.ToShortDateString()</p>
+<!-- Заголовок сторінки -->
+<h2>Докладна інформація про користувача</h2>
+
+<!-- Таблиця для відображення докладної інформації про користувача -->
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Ім'я</th>
+        <td>@Model.FirstName</td>
+    </tr>
+    <tr>
+        <th>Прізвище</th>
+        <td>@Model.LastName</td>
+    </tr>
+    <tr>
+        <th>Пошта</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Дата реєстрації</th>
+        <td>@Model.RegistrationDate.ToString("dd.MM.yyyy")</td>
+    </tr>
+</table>
+
+<!-- Посилання для повернення до списку користувачів -->
+<a asp-controller="User" asp-action="Index">Повернутися до списку користувачів</a>
