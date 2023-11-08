@@ -1,0 +1,33 @@
+@model oop6_userList.Models.User
+
+@{
+    ViewData["Title"] = "Додати користувача";
+}
+
+<h2>Додати користувача</h2>
+
+<form asp-controller="User" asp-action="AddUser" method="post">
+    <div class="form-group" style="max-width: 300px;">
+        <label asp-for="FirstName">Ім'я</label>
+        <input asp-for="FirstName" class="form-control" required />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div style="margin-top: 10px;"></div>
+    <div class="form-group" style="max-width: 300px;">
+        <label asp-for="LastName">Прізвище</label>
+        <input asp-for="LastName" class="form-control" required />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div style="margin-top: 10px;"></div>
+    <div class="form-group" style="max-width: 300px;">
+        <label asp-for="Email">Пошта</label>
+        <input asp-for="Email" class="form-control" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div style="margin-top: 10px;"></div>
+    <button type="submit" class="btn btn-primary">Готово</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
