@@ -22,8 +22,41 @@
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
                 <td>@user.RegistrationDate.ToString("dd.MM.yyyy")</td>
-                <td><a asp-controller="User" asp-action="UserDetails" asp-route-id="@user.Id">Докладніше</a></td>
+                <td><a asp-controller="User" asp-action="UserDetails" asp-route-id="@user.Id">Деталі</a></td>
             </tr>
         }
     </tbody>
 </table>
+
+<a asp-controller="User" asp-action="AddUser" class="btn btn-primary">Додати користувача</a>
+@model List<User>
+
+<h2>Список користувачів</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Пошта</th>
+            <th>Дата реєстрації</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@user.RegistrationDate.ToString("dd.MM.yyyy")</td>
+                <td><a asp-controller="User" asp-action="UserDetails" asp-route-id="@user.Id">Деталі</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="User" asp-action="AddUser" class="btn btn-primary">Додати користувача</a>
