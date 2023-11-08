@@ -33,11 +33,33 @@ namespace oop6_userList.Controllers
             User? user = userList.FirstOrDefault(u => u.Id == id);
             if (user == null)
             {
-                // Повернення статусу 404 (Not Found) у випадку, якщо користувача не знайдено
+                // Повернення  404 
                 return NotFound();
             }
             // Відображення докладної інформації про користувача
             return View(user);
         }
+
+        [HttpGet]
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddUser(User newUser)
+        {
+            if (ModelState.IsValid)
+            {
+                newUser.Id = userList.Max(u => u.Id) + 1;
+                newUser.RegistrationDate = DateTime.Now;
+                userList.Add(newUser);
+                return View("Index", userList);
+            }
+            return View(newUser);
+        }
+
+
+
     }
 }
