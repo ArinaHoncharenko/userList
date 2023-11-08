@@ -7,7 +7,6 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        // Налаштування сервісів для додатка
         services.AddControllersWithViews();
     }
 
@@ -15,20 +14,16 @@ public class Startup
     {
         if (env.IsDevelopment())
         {
-            // Використовувати сторінку помилок під час розробки
             app.UseDeveloperExceptionPage();
         }
         else
         {
-            // Використовувати обробник помилок у виробничому середовищі
             app.UseExceptionHandler("/Home/Error");
             app.UseHsts();
         }
 
-        // Використання статичних файлів
         app.UseStaticFiles();
 
-        // Налаштування маршрутизації для контролерів та дій
         app.UseRouting();
 
         app.UseEndpoints(endpoints =>
