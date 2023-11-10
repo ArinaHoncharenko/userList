@@ -3,6 +3,7 @@ using oop6_userList.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace oop6_userList.Controllers
 {
@@ -27,6 +28,12 @@ namespace oop6_userList.Controllers
         [HttpPost]
         public IActionResult AddUser(User newUser)
         {
+            // Перевірка наявності символу "@" в полі Email
+            if (!Regex.IsMatch(newUser.Email, @"@"))
+            {
+                ModelState.AddModelError("Email", "Некоректний формат електронної пошти.");
+            }
+
             if (ModelState.IsValid)
             {
                 newUser.Id = userList.Max(u => u.Id) + 1;
