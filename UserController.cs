@@ -63,5 +63,18 @@ namespace oop6_userList.Controllers
             }
             return View(user);
         }
+
+        [HttpPost]
+        public IActionResult DeleteUser(int id)
+        {
+            User? userToDelete = userList.FirstOrDefault(u => u.Id == id);
+
+            if (userToDelete != null)
+            {
+                userList.Remove(userToDelete);
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
