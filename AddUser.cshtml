@@ -24,9 +24,13 @@
         <input asp-for="Email" class="form-control" required />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
-    <div style="margin-top: 10px;"></div>
+    <div style="margin-top: 20px;"></div>
     <button type="submit" class="btn btn-primary">Готово</button>
 </form>
+
+<div style="margin-top: 20px;"></div>
+    <a asp-controller="User" asp-action="Index">Повернутися до списку користувачів</a>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
